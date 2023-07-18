@@ -1,2 +1,2 @@
-1. In desired directory, run `npx create-react-app .`
+1. npm run i
 2. npm run start

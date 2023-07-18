@@ -1,8 +1,8 @@
 import { useState } from "react";
+import axios from "axios";
 
-export const Slideshow = ({ slides, toggleModal }) => {
+export const Slideshow = ({ slides, toggleModal, setSlideIndex, slideIndex }) => {
   // states
-  const [slideIndex, setSlideIndex] = useState(0);
 
   // consts
   const currentSlide = slides[slideIndex];
@@ -23,21 +23,29 @@ export const Slideshow = ({ slides, toggleModal }) => {
 
   return (
     <div>
-      {imageUrl && (
-        <img
-          style={{
-            // debug border
-            border: "1px solid red",
-            width: 600,
-            height: 300,
-          }}
-          src={imageUrl}
-          alt="slide"
-        />
+      {(slides.length && (
+        <>
+          {imageUrl && (
+            <img
+              style={{
+                // debug border
+                border: "1px solid red",
+                width: 600,
+                height: 300,
+              }}
+              src={imageUrl}
+              alt="slide"
+            />
+          )}
+          <p>{captionText}</p>
+          <button onClick={handleNext}>{buttonText}</button>
+        </>
+      )) || (
+        <p>
+          No slides to show. Please add some slides to the slideshow component.
+        </p>
       )}
-      <p>{captionText}</p>
-      <button onClick={handleNext}>{buttonText}</button>
-      <button onClick={toggleModal}>Toggle</button>
+      <button onClick={toggleModal}>Description</button>
     </div>
   );
 };

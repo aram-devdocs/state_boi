@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { Slideshow } from "./components/Slideshow";
+import { Modal } from "./components/Modal";
+import { useState, useEffect } from "react";
 function App() {
+  // states
+  const [showModal, setShowModal] = useState(false);
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+
+  useEffect(() => {
+    return () => {
+      setShowModal(false)
+    }
+  }, [])
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Slideshow
+        toggleModal={toggleModal}
+        slides={[
+          {
+            // Index 0
+            // imageUrl: "https://picsum.photos/seed/picsum/200/300",
+            // captionText: "Slide 1",
+            buttonText: "Click me",
+          },
+          {
+            // Index 1
+            imageUrl: "https://picsum.photos/seed/picsum/200/300",
+            captionText: "Slide 2",
+            buttonText: "Click me",
+          },
+          {
+            // Index 2
+            imageUrl: "https://picsum.photos/seed/picsum/200/300",
+            captionText: "3",
+            buttonText: "Click me",
+          },
+        ]}
+      />
+      <Modal toggleModal={toggleModal} showModal={showModal} />
+    </>
   );
 }
 

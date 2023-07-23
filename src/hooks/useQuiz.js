@@ -13,53 +13,77 @@ export const useQuiz = (quizUrl) => {
       // MOCK DATA
 
       const mockData = [
+        // {
+        //   question: "What is the capital of Spain?",
+        //   type: "text",
+        //   correctAnswer: "Madrid",
+        // },
+        // {
+        //   question: "What is the capital of France?",
+        //   type: "multiple",
+        //   correctAnswer: "Paris",
+        //   choices: [
+        //     {
+        //       answer: "Paris",
+        //     },
+        //     {
+        //       answer: "London",
+        //     },
+        //     {
+        //       answer: "Rome",
+        //     },
+        //     {
+        //       answer: "Madrid",
+        //     },
+        //   ],
+        // },
+        // {
+        //   question: "What is the capital of Germany?",
+        //   type: "multiple",
+        //   correctAnswer: "Berlin",
+        //   choices: [
+        //     {
+        //       answer: "London",
+        //     },
+        //     {
+        //       answer: "Rome",
+        //     },
+        //     {
+        //       answer: "Madrid",
+        //     },
+        //     {
+        //       answer: "Berlin",
+        //     },
+        //   ],
+        // },
+        // {
+        //   question: "What is the capital of Italy?",
+        //   type: "text",
+        //   correctAnswer: "Rome",
+        // },
+
+        // mock data for personality quiz
         {
-          question: "What is the capital of Spain?",
-          type: "text",
-          correctAnswer: "Madrid",
-        },
-        {
-          question: "What is the capital of France?",
+          question: "What is your favorite color?",
           type: "multiple",
-          correctAnswer: "Paris",
           choices: [
             {
-              answer: "Paris",
+              answer: "Red",
             },
             {
-              answer: "London",
+              answer: "Blue",
             },
             {
-              answer: "Rome",
+              answer: "Green",
             },
             {
-              answer: "Madrid",
+              answer: "Yellow",
             },
           ],
         },
         {
-          question: "What is the capital of Germany?",
-          type: "multiple",
-          correctAnswer: "Berlin",
-          choices: [
-            {
-              answer: "London",
-            },
-            {
-              answer: "Rome",
-            },
-            {
-              answer: "Madrid",
-            },
-            {
-              answer: "Berlin",
-            },
-          ],
-        },
-        {
-          question: "What is the capital of Italy?",
+          question: "What is your favorite animal?",
           type: "text",
-          correctAnswer: "Rome",
         },
       ];
 

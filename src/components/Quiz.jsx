@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useQuiz } from "../hooks/useQuiz";
 
-export const Quiz = ({ definedAnswers = true }) => {
+export const Quiz = () => {
   const {
     currentQuestionIndex,
     isLoading,
@@ -22,6 +22,9 @@ export const Quiz = ({ definedAnswers = true }) => {
   const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
   const isFirstQuestion = currentQuestionIndex === 0;
   const isAnswerCorrect = useMemo(() => {
+    if (!currentQuestion?.correctAnswer) {
+      return false;
+    }
     return (
       currentQuestion?.correctAnswer?.toLowerCase() ===
       userResponses[currentQuestionIndex]?.toLowerCase()
@@ -41,7 +44,7 @@ export const Quiz = ({ definedAnswers = true }) => {
       <h2>Question {currentQuestionIndex + 1}</h2>
       <p>{currentQuestion.question}</p>
 
-      {isAnswerCorrect && definedAnswers && (
+      {isAnswerCorrect && (
         <span
           style={{
             color: "green",

@@ -1,5 +1,5 @@
 import { Quiz } from "../components/Quiz";
 
 export const QuizView = () => {
-  return <Quiz />;
+  return <Quiz definedAnswers={false} />;
 };

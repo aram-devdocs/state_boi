@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useQuiz } from "../hooks/useQuiz";
 
-export const Quiz = () => {
+export const Quiz = ({ definedAnswers = true }) => {
   const {
     currentQuestionIndex,
     isLoading,
@@ -41,7 +41,7 @@ export const Quiz = () => {
       <h2>Question {currentQuestionIndex + 1}</h2>
       <p>{currentQuestion.question}</p>
 
-      {isAnswerCorrect && (
+      {isAnswerCorrect && definedAnswers && (
         <span
           style={{
             color: "green",
